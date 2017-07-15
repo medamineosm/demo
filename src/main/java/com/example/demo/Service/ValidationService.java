@@ -1,7 +1,6 @@
 package com.example.demo.Service;
 
 import com.example.demo.Models.User;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,15 +9,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class ValidationService {
 
-    @Value("${password.regex}")
-    private String regexPassword;
-
-
     public boolean registationValidation(User user){
-        if(user.getPassword().equals(user.getRePassword())){
-            return user.getPassword().matches(regexPassword);
-        }else{
+        if(user.getPassword().length() < 8)
             return false;
+        else{
+            if(user.getPassword().equals(user.getRePassword())){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 }

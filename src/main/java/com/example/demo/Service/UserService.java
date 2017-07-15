@@ -25,6 +25,7 @@ public class UserService {
     }
 
     public Collection<User> findAllUsers(){
+        System.out.println(userDao.findAll());
         return userDao.findAll();
     }
 

@@ -87,6 +87,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", famillyName='" + famillyName + '\'' +
                 ", password='" + password + '\'' +
+                ", rePassword='" + rePassword + '\'' +
                 ", createAt=" + createAt +
                 '}';
     }
